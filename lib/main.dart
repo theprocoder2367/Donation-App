@@ -24,9 +24,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MaterialApp(
-    // home: SplashScreen(),
+    home: SplashScreen(),
     // home: DonationsFragment(),
-    home: DonationMode(),
+    // home: DonationMode(),
     debugShowCheckedModeBanner: false,
   ));
 }

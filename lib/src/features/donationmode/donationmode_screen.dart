@@ -18,12 +18,18 @@ class DonationMode extends StatefulWidget {
 
 
 class _DonationModeState extends State<DonationMode> {
+
+
   TextEditingController phoneController=TextEditingController(text: "");
+  TextEditingController addressController=TextEditingController(text: "");
+  TextEditingController landmarkController=TextEditingController(text: "");
   DateTime? _selectedDate;
+
+
   void _datePicker() async {
     final currentDate = DateTime.now();
     final firstDate =
-    DateTime(currentDate.year-1, currentDate.month, currentDate.day);
+    DateTime(currentDate.year, currentDate.month, currentDate.day);
     final pickedDate = await showDatePicker(
         context: context,
         initialDate: currentDate,
@@ -110,13 +116,13 @@ class _DonationModeState extends State<DonationMode> {
                                 CustomTextField(
                                   h: 100,
                                   fieldname: 'Pickup Address',
-                                  controller: phoneController,
+                                  controller: addressController,
                                 ),
                                 SizedBox(height: 10,),
                                 CustomTextField(
                                   h: 50,
                                   fieldname: 'Landmark(Optional)',
-                                  controller: phoneController,
+                                  controller: landmarkController,
                                 ),
                                 SizedBox(height: 10,),
                                 Container(

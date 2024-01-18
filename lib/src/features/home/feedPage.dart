@@ -77,7 +77,7 @@ class _feedPageState extends State<feedPage> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     StartFundingButton(),
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.symmetric(vertical: 16.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -105,7 +105,7 @@ class _feedPageState extends State<feedPage> {
                         ],
                       ),
                     ),
-                    const Padding(
+                    Padding(
                       padding: EdgeInsets.only(left: 20, right: 20),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -161,12 +161,12 @@ class _feedPageState extends State<feedPage> {
                                   side: const BorderSide(color: Colors.blue),
                                 ),
                                 margin:
-                                    const EdgeInsets.fromLTRB(15, 7.5, 15, 7.5),
+                                const EdgeInsets.fromLTRB(15, 7.5, 15, 7.5),
                                 child: Padding(
                                   padding: const EdgeInsets.all(20.0),
                                   child: Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.stretch,
+                                    CrossAxisAlignment.stretch,
                                     children: [
                                       Container(
                                         height: 100,
