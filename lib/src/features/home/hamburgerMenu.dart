@@ -177,7 +177,7 @@ class hamburgerMenu extends StatelessWidget {
                         await GoogleSignIn().signOut();
 
                         navigator.pushAndRemoveUntil(MaterialPageRoute(
-                            builder: (c) => const loginPage()),(route)=>false);
+                            builder: (c) => const LoginPage()),(route)=>false);
                       },
                       child: const Row(
                         children: [

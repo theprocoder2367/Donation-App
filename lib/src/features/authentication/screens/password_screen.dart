@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:donation_app/src/features/authentication/models/profile_setup.dart';
+import 'package:donation_app/src/features/intro/screens/splash.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -19,11 +20,17 @@ class _PasswordScreenState extends State<PasswordScreen> {
   final TextEditingController confirmPasswordController =
       TextEditingController();
 
-  bool _obscureText = true;
+  bool _obscureText1 = true;
+  bool _obscureText2 = true;
 
-  void _toggle() {
+  void _toggle1() {
     setState(() {
-      _obscureText = !_obscureText;
+      _obscureText1 = !_obscureText1;
+    });
+  }
+  void _toggle2() {
+    setState(() {
+      _obscureText2 = !_obscureText2;
     });
   }
 
@@ -74,7 +81,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                 TextField(
                   controller: confirmPasswordController,
                   textAlign: TextAlign.left,
-                  obscureText: _obscureText,
+                  obscureText: _obscureText1,
                   enableSuggestions: false,
                   autocorrect: false,
                   decoration: InputDecoration(
@@ -102,10 +109,10 @@ class _PasswordScreenState extends State<PasswordScreen> {
                       ),
                       suffixIcon: IconButton(
                         padding: const EdgeInsets.all(20),
-                        icon: Icon(_obscureText
+                        icon: Icon(_obscureText1
                             ? Icons.visibility
                             : Icons.visibility_off),
-                        onPressed: _toggle,
+                        onPressed: _toggle1,
                       )),
                   keyboardType: TextInputType.visiblePassword,
                   textInputAction: TextInputAction.done,
@@ -114,7 +121,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                 TextField(
                   controller: passwordController,
                   textAlign: TextAlign.left,
-                  obscureText: _obscureText,
+                  obscureText: _obscureText2,
                   enableSuggestions: false,
                   autocorrect: false,
                   decoration: InputDecoration(
@@ -142,10 +149,10 @@ class _PasswordScreenState extends State<PasswordScreen> {
                       ),
                       suffixIcon: IconButton(
                         padding: const EdgeInsets.all(20),
-                        icon: Icon(_obscureText
+                        icon: Icon(_obscureText2
                             ? Icons.visibility
                             : Icons.visibility_off),
-                        onPressed: _toggle,
+                        onPressed: _toggle2,
                       )),
                   keyboardType: TextInputType.visiblePassword,
                   textInputAction: TextInputAction.done,
@@ -158,6 +165,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                     onPressed: () async {
                       String? uid = await createAccount();
                       if (uid != null) {
+                        firsttime=false;
                         Navigator.push(
                           context,
                           MaterialPageRoute(

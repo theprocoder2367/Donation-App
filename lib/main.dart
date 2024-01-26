@@ -1,16 +1,6 @@
-import 'package:donation_app/src/features/donationmode/donationmode_screen.dart';
-import 'package:donation_app/src/features/home/DonationDetails.dart';
-import 'package:donation_app/src/features/home/baseHomeActivity.dart';
-import 'package:donation_app/src/features/donationcart/mydonationbox.dart';
-import 'package:donation_app/src/features/intro/screens/onboarding_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'src/features/intro/screens/splash.dart';
-import 'src/features/authentication/screens/loginPage.dart';
-import 'src/features/authentication/screens/signup_screen.dart';
-import 'src/features/home/feedPage.dart';
-import 'src/features/home/donations_fragment.dart';
-import 'src/features/profile/profilePage.dart';
 import 'src/features/firebase/firebase_options.dart';
 
 

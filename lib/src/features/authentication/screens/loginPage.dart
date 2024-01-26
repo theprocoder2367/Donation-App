@@ -1,4 +1,5 @@
 import 'package:donation_app/src/features/authentication/screens/signup_screen.dart';
+import 'package:donation_app/src/features/intro/screens/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -13,11 +14,11 @@ this is the screen responsible for handling of the login actvity
 this page also conatins the code of the sign in activity to oo
  */
 
-class loginPage extends StatefulWidget {
-  const loginPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  _loginPageState createState() => _loginPageState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
 Future<void> signInUser(String email, String password) async {
@@ -58,7 +59,7 @@ Future<void> signInUserGoogle() async {
   }
 }
 
-class _loginPageState extends State<loginPage> {
+class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController(text: "");
   final TextEditingController passwordController =
       TextEditingController(text: "");
@@ -205,7 +206,7 @@ class _loginPageState extends State<loginPage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => basehomeActivity()),
+                                    builder: (context) => BaseHomeActivity()),
                               );
                             }).catchError((error) {
                               print(error);
@@ -251,7 +252,10 @@ class _loginPageState extends State<loginPage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => basehomeActivity()),
+                                    builder: (context){
+                                      firsttime=false;
+                                      return BaseHomeActivity();
+                                    }),
                               );
                             }).catchError((error) {
                               print(error);

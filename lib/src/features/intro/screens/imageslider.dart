@@ -50,15 +50,16 @@ class _ImageSliderState extends State<ImageSlider> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: h*0.5,
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(30.0),
-        child: AnimatedSwitcher(
-          duration: const Duration(seconds: 1),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(30.0),
+      child: AnimatedSwitcher(
+        duration: const Duration(seconds: 1),
+        child: SizedBox(
+          height: h*0.5,
+          width: w*0.75,
           child: Image(
             image: _image.image,
-            fit: BoxFit.fill,
+            fit: BoxFit.cover,
             key: ValueKey<Image>(_image),
           ),
         ),

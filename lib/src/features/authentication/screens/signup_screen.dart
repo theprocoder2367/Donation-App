@@ -1,3 +1,5 @@
+import 'package:donation_app/src/common_widgets/auth_text_field.dart';
+import 'package:donation_app/src/common_widgets/textfield.dart';
 import 'package:donation_app/src/features/home/baseHomeActivity.dart';
 import 'package:donation_app/src/features/authentication/screens/loginPage.dart';
 import 'package:donation_app/src/features/authentication/screens/password_screen.dart';
@@ -85,7 +87,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           style: TextStyle(
                               fontSize: 50, fontWeight: FontWeight.w500)),
                       const SizedBox(height: 35),
-
+                      CustomAuthTextField(hinttext: "Your Email", controller: emailController),
                       const SizedBox(height: 20),
                       SizedBox(
                         width: double.infinity,
@@ -139,7 +141,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => basehomeActivity()),
+                                    builder: (context) => BaseHomeActivity()),
                               );
                             }).catchError((error) {
                               print(error);
@@ -164,7 +166,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => const loginPage(),
+                                  builder: (context) => const LoginPage(),
                                 ),
                               );
                             },

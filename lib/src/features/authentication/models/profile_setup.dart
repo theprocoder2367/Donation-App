@@ -141,7 +141,7 @@ class _ProfileSetupState extends State<ProfileSetup> {
                       Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => basehomeActivity(),
+                          builder: (context) => BaseHomeActivity(),
                         ),
                         (route) => false,
                       );

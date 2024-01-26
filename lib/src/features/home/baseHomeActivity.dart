@@ -13,14 +13,14 @@ import 'hamburger_function.dart';
 this page is responsible for the homeactivity and the hamburger transtition
  */
 
-class basehomeActivity extends StatefulWidget {
-  const basehomeActivity({super.key});
+class BaseHomeActivity extends StatefulWidget {
+  const BaseHomeActivity({super.key});
 
   @override
-  State<basehomeActivity> createState() => _basehomeActivityState();
+  State<BaseHomeActivity> createState() => _BaseHomeActivityState();
 }
 
-class _basehomeActivityState extends State<basehomeActivity> with SingleTickerProviderStateMixin
+class _BaseHomeActivityState extends State<BaseHomeActivity> with SingleTickerProviderStateMixin
 {
 
 
